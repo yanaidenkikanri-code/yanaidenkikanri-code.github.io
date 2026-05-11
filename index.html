@@ -752,4 +752,90 @@ footer{background:var(--text);padding:32px 40px;display:flex;align-items:center;
     <div style="font-size:15px;color:#4a5568;line-height:1.75;">お問い合わせありがとうございます。<br>後ほどご連絡いたします。</div>
   </div>
   <div id="cf-error" style="display:none;background:#fff3f3;border-radius:12px;padding:24px;margin-top:4px;text-align:center;border:1px solid #f5c6cb;">
-    <div style="font-size:17px;font-weight:700;colo
+    <div style="font-size:17px;font-weight:700;color:#c53030;margin-bottom:10px;">⚠️ 送信に失敗しました</div>
+    <div style="font-size:14px;color:#4a5568;">お手数ですが、しばらく経ってから再度お試しいただくか、お電話にてお問い合わせください。</div>
+  </div>
+  </div>
+
+<script>
+function showConfirm(event) {
+  event.preventDefault();
+  var nameVal  = document.getElementById('cf-name').value.trim();
+  var emailVal = document.getElementById('cf-email').value.trim();
+  var telVal   = document.getElementById('cf-tel').value.trim();
+  var msgVal   = document.getElementById('cf-msg').value.trim();
+  if (!nameVal || !msgVal) {
+    alert('お名前とお問い合わせ内容は必須です。');
+    return;
+  }
+  var rows = [
+    { label: 'お名前・会社名', value: nameVal },
+    { label: 'メールアドレス', value: emailVal || '（未入力）' },
+    { label: '電話番号',       value: telVal   || '（未入力）' },
+    { label: 'お問い合わせ内容', value: msgVal }
+  ];
+  var container = document.getElementById('cf-confirm-rows');
+  container.innerHTML = '';
+  rows.forEach(function(r) {
+    var row = document.createElement('div');
+    row.setAttribute('style', 'display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #e2e8f0;flex-wrap:wrap;');
+    var lbl = document.createElement('div');
+    lbl.setAttribute('style', 'min-width:140px;font-weight:700;color:#1a2540;font-size:14px;flex-shrink:0;');
+    lbl.textContent = r.label;
+    var val = document.createElement('div');
+    val.setAttribute('style', 'flex:1;font-size:15px;color:#1a2540;white-space:pre-wrap;word-break:break-all;');
+    val.textContent = r.value;
+    row.appendChild(lbl);
+    row.appendChild(val);
+    container.appendChild(row);
+  });
+  document.getElementById('contactForm').style.display = 'none';
+  var confirmDiv = document.getElementById('cf-confirm');
+  confirmDiv.style.display = 'block';
+  confirmDiv.style.background = '#ffffff';
+  confirmDiv.style.color = '#1a2540';
+  document.getElementById('cf-success').style.display = 'none';
+  document.getElementById('cf-error').style.display = 'none';
+  confirmDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function backToForm() {
+  document.getElementById('contactForm').style.display = 'block';
+  document.getElementById('cf-confirm').style.display = 'none';
+}
+
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function doSend() {
+  var btn = document.getElementById('cf-submit-final');
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+  var name  = document.getElementById('cf-name').value.trim();
+  var email = document.getElementById('cf-email').value.trim();
+  var tel   = document.getElementById('cf-tel').value.trim();
+  var msg   = document.getElementById('cf-msg').value.trim();
+  var FORM_URL = 'https://formspree.io/f/maqvplzb';
+  fetch(FORM_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify({ name: name, email: email, tel: tel, message: msg })
+  })
+  .then(function(res) {
+    if (res.ok) {
+      document.getElementById('cf-confirm').style.display = 'none';
+      document.getElementById('cf-success').style.display = 'block';
+      document.getElementById('contactForm').reset();
+    } else { throw new Error('fail'); }
+  })
+  .catch(function() {
+    document.getElementById('cf-confirm').style.display = 'none';
+    document.getElementById('cf-error').style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = '送信する';
+  });
+}
+</script>
+</body>
+</html>
