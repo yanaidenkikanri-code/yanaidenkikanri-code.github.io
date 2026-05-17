@@ -386,6 +386,7 @@ footer{background:var(--text);padding:32px 40px;display:flex;align-items:center;
     <div class="logo-text">
       <span class="logo-main"><ruby>梁井<rt style="font-size:9px;letter-spacing:.02em;">やない</rt></ruby>電気設備管理事務所</span>
       <span class="logo-sub">YANAI ELECTRICAL OFFICE</span>
+              <span style="display:block;font-size:10px;color:#8b9ab5;letter-spacing:0.04em;margin-top:2px;">一般社団法人 関西電気管理技術者協会 所属</span>
     </div>
   </div>
   <nav>
@@ -727,7 +728,6 @@ footer{background:var(--text);padding:32px 40px;display:flex;align-items:center;
     <div style="text-align:center;margin-bottom:40px;">
       <span style="display:inline-block;background:#f0a500;color:#1a2744;font-size:0.75rem;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:0.08em;margin-bottom:12px;">電気知識コラム</span>
       <h2 style="font-family:'Noto Serif JP',serif;font-size:1.6rem;color:#1a2744;font-weight:700;margin-bottom:10px;">電気のことをわかりやすく解説</h2>
-      <p style="color:#5a6478;font-size:0.95rem;">電気の専門知識を、電気をご存じない方にもわかりやすくお伝えします。</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;">
       <a href="column_kouatsu.html" style="text-decoration:none;display:block;background:#ffffff;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(26,39,68,0.08);transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-4px)'" onmouseout="this.style.transform='translateY(0)'">
@@ -884,6 +884,17 @@ function doSend() {
     btn.textContent = '送信する';
   });
 }
+function toggleMenu(){var nav=document.getElementById('mobileNav');var btn=document.getElementById('hamburger');nav.classList.toggle('open');btn.classList.toggle('open');}
+function closeMenu(){var nav=document.getElementById('mobileNav');var btn=document.getElementById('hamburger');nav.classList.remove('open');btn.classList.remove('open');}
 </script>
+<footer style="background:#1a2540;color:#fff;text-align:center;padding:40px 20px;">
+  <div style="max-width:800px;margin:0 auto;">
+      <p style="font-size:1.1rem;font-weight:700;margin-bottom:8px;">梁井電気設備管理事務所</p>
+          <p style="font-size:0.85rem;color:#aab4c6;margin-bottom:12px;">一般社団法人 関西電気管理技術者協会 所属</p>
+              <p style="font-size:0.85rem;color:#aab4c6;margin-bottom:12px;">兵庫県姫路市伊伝居　|　電気主任技術者（第三種）</p>
+                  <p style="font-size:0.85rem;color:#aab4c6;margin-bottom:16px;">TEL: 090-5889-5915　|　Email: yanai.denkikanri@gmail.com</p>
+                      <p style="font-size:0.75rem;color:#778899;">&copy; 2026 梁井電気設備管理事務所 All Rights Reserved.</p>
+                        </div>
+                        </footer>
 </body>
 </html>
