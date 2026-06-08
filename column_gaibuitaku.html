@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電気主任技術者を雇わなくていいって本当？｜電気知識コラム｜梁井電気設備管理事務所</title>
+  <meta name="description" content="自家用電気設備を持つ事業者が電気主任技術者を社内で雇わずに済む「外部委託制度」の仕組み・条件・メリットをわかりやすく解説します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --blue: #2563a8;
+      --light-blue: #e8f0fb;
+      --accent: #f0a500;
+      --accent-light: #fff8e6;
+      --text: #1e2530;
+      --text-light: #5a6478;
+      --bg: #f7f8fc;
+      --white: #ffffff;
+      --border: #dde3ef;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+
+    header { background: var(--navy); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { color: var(--white); font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.05em; text-decoration: none; }
+    .back-btn { color: #a8bcd8; font-size: 0.85rem; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .back-btn:hover { color: var(--white); }
+
+    .hero { background: linear-gradient(135deg, var(--navy) 0%, #2a3f6f 60%, #1e3a5f 100%); padding: 60px 24px 50px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; background: rgba(245,165,0,0.08); }
+    .hero::after { content: ''; position: absolute; bottom: -80px; left: -40px; width: 220px; height: 220px; border-radius: 50%; background: rgba(37,99,168,0.2); }
+    .category-tag { display: inline-block; background: var(--accent); color: var(--navy); font-size: 0.75rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; letter-spacing: 0.08em; margin-bottom: 18px; }
+    .hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.4rem,4vw,2.1rem); color: var(--white); font-weight: 700; line-height: 1.5; margin-bottom: 16px; position: relative; z-index: 1; }
+    .hero-sub { color: #a8bcd8; font-size: 0.9rem; position: relative; z-index: 1; }
+
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+
+    .toc { background: var(--light-blue); border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; padding: 24px 28px; margin: 40px 0; }
+    .toc-title { font-size: 0.85rem; font-weight: 700; color: var(--blue); letter-spacing: 0.1em; margin-bottom: 14px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 8px; }
+    .toc a { color: var(--navy); text-decoration: none; font-size: 0.92rem; transition: color 0.2s; }
+    .toc a:hover { color: var(--blue); text-decoration: underline; }
+
+    /* 通常セクション */
+    .section { background: var(--white); border-radius: 12px; padding: 36px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(26,39,68,0.06); }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+    .section-number { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: var(--blue); color: var(--white); border-radius: 50%; font-size: 0.9rem; font-weight: 700; flex-shrink: 0; }
+    .section h2 { font-family: 'Noto Serif JP', serif; font-size: 1.3rem; color: var(--navy); font-weight: 700; margin: 0; padding: 0; border: none; }
+    .section p { color: var(--text); font-size: 0.97rem; margin-bottom: 16px; line-height: 1.9; }
+    .section p:last-child { margin-bottom: 0; }
+
+    .em-text { color: var(--blue); font-weight: 700; }
+
+    /* ポイントボックス */
+    .point-box { background: var(--accent-light); border: 2px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin: 20px 0; display: flex; gap: 14px; align-items: flex-start; }
+    .point-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+    .point-box p { margin: 0; font-size: 0.95rem; font-weight: 500; color: var(--navy); }
+
+    /* 注意ボックス */
+    .note-box { background: var(--light-blue); border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 20px 0; font-size: 0.92rem; color: var(--navy); }
+
+    /* テーブル */
+    .data-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+    .data-table th { background: var(--navy); color: var(--white); padding: 12px 16px; text-align: left; font-weight: 700; }
+    .data-table td { padding: 12px 16px; border: 1px solid var(--border); vertical-align: top; }
+    .data-table tr:nth-child(even) td { background: var(--bg); }
+    .tag-ok { background: #1a8a4a; color: #fff; padding: 2px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; }
+    .tag-ng { background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700; }
+
+    /* 比較テーブル */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+    .compare-table th { background: var(--navy); color: var(--white); padding: 12px 16px; text-align: center; font-weight: 700; }
+    .compare-table td { padding: 12px 16px; border: 1px solid var(--border); text-align: center; vertical-align: middle; }
+    .compare-table tr:nth-child(even) td { background: var(--bg); }
+    .compare-table .td-label { font-weight: 700; color: var(--navy); text-align: left; background: var(--light-blue) !important; }
+
+    /* チェックリスト */
+    .check-list { list-style: none; padding: 0; }
+    .check-list li { padding: 10px 0 10px 36px; border-bottom: 1px solid var(--border); position: relative; font-size: 0.95rem; }
+    .check-list li::before { content: '✅'; position: absolute; left: 0; top: 10px; }
+    .check-list li:last-child { border-bottom: none; }
+
+    /* まとめ（summaryセクション） */
+    .summary { background: linear-gradient(135deg, var(--navy), #2a3f6f); border-radius: 12px; padding: 36px; margin-bottom: 28px; color: var(--white); }
+    .summary .section-header { border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .summary .section-number { background: var(--accent); color: var(--navy); }
+    .summary h2 { font-family: 'Noto Serif JP', serif; font-size: 1.2rem; color: var(--white); font-weight: 700; margin: 0; padding: 0; border: none; }
+    .summary ul { list-style: none; padding: 0; margin-top: 4px; }
+    .summary ul li { padding: 8px 0 8px 28px; position: relative; font-size: 0.95rem; color: #d0dcf0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .summary ul li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .summary ul li:last-child { border-bottom: none; }
+
+    /* CTA */
+    .cta-section { background: var(--white); border-radius: 12px; padding: 36px; margin-bottom: 40px; text-align: center; box-shadow: 0 2px 12px rgba(26,39,68,0.06); border: 2px solid var(--accent); }
+    .cta-section h3 { font-family: 'Noto Serif JP', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 12px; }
+    .cta-section p { color: var(--text-light); font-size: 0.92rem; margin-bottom: 24px; }
+    .cta-btn { display: inline-block; background: var(--blue); color: var(--white); padding: 14px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 14px rgba(37,99,168,0.35); }
+    .cta-btn:hover { background: var(--navy); transform: translateY(-2px); }
+
+    /* 著者ボックス */
+    .author-box { background: var(--white); border-radius: 12px; padding: 24px 28px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(26,39,68,0.06); display: flex; gap: 20px; align-items: flex-start; }
+    .author-icon { width: 60px; height: 60px; background: var(--light-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
+    .author-info h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .author-info p { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; margin: 0; }
+
+    footer { background: var(--navy); color: #7a8faa; text-align: center; padding: 28px 24px; font-size: 0.82rem; }
+    footer a { color: #a8bcd8; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .section { padding: 24px 18px; }
+      .summary { padding: 24px 18px; }
+      .cta-section { padding: 28px 18px; }
+      .author-box { flex-direction: column; }
+      .compare-table { font-size: 0.8rem; }
+      .data-table { font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">梁井電気設備管理事務所</a>
+  <a href="index.html" class="back-btn">← トップページへ戻る</a>
+</header>
+
+<div class="hero">
+  <div class="category-tag">💡 実務・費用編｜電気知識コラム</div>
+  <h1>電気主任技術者を雇わなくていいって本当？</h1>
+  <p class="hero-sub">〜 外部委託制度の仕組みとメリットをわかりやすく解説 〜</p>
+</div>
+
+<div class="container">
+
+  <div class="toc">
+    <div class="toc-title">📋 この記事でわかること</div>
+    <ol>
+      <li><a href="#sec1">「外部委託」とは何か——制度の概要</a></li>
+      <li><a href="#sec2">外部委託が認められる設備の種類と条件</a></li>
+      <li><a href="#sec3">外部委託にするメリット・デメリット</a></li>
+      <li><a href="#sec4">どんな事業者が対象？自己チェック</a></li>
+      <li><a href="#sec5">まとめ</a></li>
+    </ol>
+  </div>
+
+  <!-- セクション1 -->
+  <div class="section" id="sec1">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>「外部委託」とは何か——制度の概要</h2>
+    </div>
+    <p>工場やビルにキュービクル（高圧受電設備）を設置している事業者には、<span class="em-text">「電気主任技術者」を選任して、電気設備の安全管理を行う</span>義務があります（電気事業法）。</p>
+    <p>「電気主任技術者は必ず自社で雇わなければならない」と思っている方がいらっしゃいます。</p>
+    <p>一定の条件を満たせば、電気主任技術者の選任を社内で行わずに、<span class="em-text">個人の電気管理技術者へ業務を外部委託することが認められています。</span>これが<strong>「保安管理業務の外部委託制度」</strong>です。</p>
+
+    <div class="point-box">
+      <div class="point-icon">💡</div>
+      <p><strong>ひとことで言うと——</strong><br>
+      電気の専門家に「うちの設備の安全管理をお願いします」と契約することで、自社で資格者を雇わなくても法律上の義務を果たせる制度です。</p>
+    </div>
+  </div>
+
+  <!-- セクション2 -->
+  <div class="section" id="sec2">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>外部委託が認められる設備の種類と条件</h2>
+    </div>
+    <p>外部委託制度を使えるのは、<span class="em-text">設備の種類・電圧・規模が一定の範囲内</span>の場合に限られます。おもな区分は以下のとおりです。</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>設備の種別</th>
+          <th>外部委託</th>
+          <th>条件・備考</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>高圧受電設備</strong><br><small>（6,600V受電）</small></td>
+          <td><span class="tag-ok">可</span></td>
+          <td>一般的な工場・ビルのほとんどが該当</td>
+        </tr>
+        <tr>
+          <td><strong>特別高圧受電設備</strong></td>
+          <td><span class="tag-ng">不可</span></td>
+          <td>自社での電気主任技術者の選任が必要</td>
+        </tr>
+        <tr>
+          <td><strong>太陽光発電設備</strong></td>
+          <td><span class="tag-ok">可</span></td>
+          <td>出力 5,000kW未満 の場合</td>
+        </tr>
+        <tr>
+          <td><strong>その他の発電設備</strong><br><small>（自家発電・風力など）</small></td>
+          <td><span class="tag-ok">条件付き可</span></td>
+          <td>発電の種類・出力規模によって条件が異なります</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="point-box">
+      <div class="point-icon">📌</div>
+      <p>多くの中小工場・ビルは「高圧受電（6,600V）」に該当します。分からない場合はお気軽にご相談ください。</p>
+    </div>
+  </div>
+
+  <!-- セクション3（旧4） -->
+  <div class="section" id="sec3">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>外部委託にするメリット・デメリット</h2>
+    </div>
+    <p>外部委託制度を選択した場合と、自社で電気主任技術者を雇用した場合を比較します。</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th style="width:28%">比較項目</th>
+          <th style="width:36%">✅ 外部委託のメリット</th>
+          <th style="width:36%">⚠️ 注意点</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-label">💰 コスト</td>
+          <td>専任の電気主任技術者を正社員で雇う場合と比べ、費用を大幅に抑えられる</td>
+          <td>委託費用は継続的に発生する</td>
+        </tr>
+        <tr>
+          <td class="td-label">🔧 専門性</td>
+          <td>多くの施設を担当してきた経験豊富な専門家が対応</td>
+          <td>緊急時の即応は常駐と比べてやや遅くなる場合がある</td>
+        </tr>
+        <tr>
+          <td class="td-label">👤 人材確保</td>
+          <td>採用難・退職リスクから解放される</td>
+          <td>委託先の信頼性・実績の確認が重要</td>
+        </tr>
+        <tr>
+          <td class="td-label">📝 手続き</td>
+          <td>委託先がサポートするので、届出手続きも安心</td>
+          <td>産業保安監督部への届出が必要（初回のみ）</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="point-box">
+      <div class="point-icon">💬</div>
+      <p>「電気主任技術者を採用しようとしたが見つからない」「担当者が退職してしまった」というお悩みに、外部委託は非常に有効な解決策です。</p>
+    </div>
+  </div>
+
+  <!-- セクション4（旧5） -->
+  <div class="section" id="sec4">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>どんな事業者が対象？自己チェック</h2>
+    </div>
+    <p>以下の項目に当てはまる事業者様は、外部委託制度の活用を検討する価値があります。</p>
+
+    <ul class="check-list">
+      <li>工場・倉庫・ビル・商業施設・病院などに<strong>キュービクル（高圧受電設備）を設置</strong>している</li>
+      <li>電柱から<strong>6,600V（高圧）</strong>で電気を引き込んでいる</li>
+      <li>電気主任技術者を自社で雇用しており、<strong>コストや採用の手間を削減したい</strong></li>
+      <li>電気主任技術者が<strong>不在・退職予定</strong>で、対応に困っている</li>
+      <li>電気の保安管理を<strong>プロに任せて本業に集中</strong>したい</li>
+    </ul>
+
+    <div class="point-box">
+      <div class="point-icon">📞</div>
+      <p><strong>「うちの設備は対象になる？」</strong><br>
+      設備の状況を確認した上で、外部委託が可能かどうかを無料で確認いたしますので、お気軽にお問い合わせください。</p>
+    </div>
+  </div>
+
+  <!-- セクション5 まとめ（旧6） -->
+  <div class="summary" id="sec5">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>まとめ</h2>
+    </div>
+    <ul>
+      <li>電気事業法に基づく正式な制度で、条件を満たせば活用できる</li>
+      <li>高圧受電設備（6,600V）であれば、電力の大きさに関わらず多くの事業者が対象</li>
+      <li>特別高圧での受電は自社選任が必要</li>
+      <li>社員雇用と比べてコストを大幅に抑えられるケースが多い</li>
+      <li>委託できる相手は国が認めた専門家に限られる</li>
+    </ul>
+  </div>
+
+  <!-- 著者ボックス -->
+  <div class="author-box">
+    <div class="author-icon">👨‍💼</div>
+    <div class="author-info">
+      <h4>梁井電気設備管理事務所　代表 梁井</h4>
+      <p>第二種電気主任技術者・エネルギー管理士。兵庫県姫路市を拠点に、高圧受電設備の保安管理業務を行っています。電気のことで困ったことがあれば、お気軽にご相談ください。</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h3>⚡ 電気管理のことでお困りですか？</h3>
+    <p>キュービクルの点検・管理、外部委託についてのご相談はお気軽にどうぞ。<br>姫路市・加古川市・赤穂市・たつの市など兵庫県全域に対応しています。</p>
+    <a href="index.html#contact" class="cta-btn">無料相談・お問い合わせはこちら</a>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <p>© 2025 梁井電気設備管理事務所 | <a href="index.html">トップページ</a></p>
+</footer>
+
+</body>
+</html>
