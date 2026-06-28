@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>月次点検・年次点検って何をするの？｜電気知識コラム｜梁井電気設備管理事務所</title>
+  <meta name="description" content="工場・ビルの電気設備に義務づけられている月次点検・年次点検（停電点検）の内容と重要性を、電気の専門家がわかりやすく解説します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #1a2744;
+      --blue: #2563a8;
+      --light-blue: #e8f0fb;
+      --accent: #f0a500;
+      --accent-light: #fff8e6;
+      --text: #1e2530;
+      --text-light: #5a6478;
+      --bg: #f7f8fc;
+      --white: #ffffff;
+      --border: #dde3ef;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--text); line-height: 1.8; }
+
+    header { background: var(--navy); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .logo { color: var(--white); font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.05em; text-decoration: none; }
+    .back-btn { color: #a8bcd8; font-size: 0.85rem; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .back-btn:hover { color: var(--white); }
+
+    .hero { background: linear-gradient(135deg, var(--navy) 0%, #2a3f6f 60%, #1e3a5f 100%); padding: 60px 24px 50px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 280px; height: 280px; border-radius: 50%; background: rgba(245,165,0,0.08); }
+    .hero::after { content: ''; position: absolute; bottom: -80px; left: -40px; width: 220px; height: 220px; border-radius: 50%; background: rgba(37,99,168,0.2); }
+    .category-tag { display: inline-block; background: var(--accent); color: var(--navy); font-size: 0.75rem; font-weight: 700; padding: 4px 14px; border-radius: 20px; letter-spacing: 0.08em; margin-bottom: 18px; }
+    .hero h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.4rem,4vw,2.1rem); color: var(--white); font-weight: 700; line-height: 1.5; margin-bottom: 16px; position: relative; z-index: 1; }
+    .hero-sub { color: #a8bcd8; font-size: 0.9rem; position: relative; z-index: 1; }
+
+    .container { max-width: 780px; margin: 0 auto; padding: 0 20px; }
+
+    .toc { background: var(--light-blue); border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; padding: 24px 28px; margin: 40px 0; }
+    .toc-title { font-size: 0.85rem; font-weight: 700; color: var(--blue); letter-spacing: 0.1em; margin-bottom: 14px; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 8px; }
+    .toc a { color: var(--navy); text-decoration: none; font-size: 0.92rem; transition: color 0.2s; }
+    .toc a:hover { color: var(--blue); text-decoration: underline; }
+
+    /* 通常セクション */
+    .section { background: var(--white); border-radius: 12px; padding: 36px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(26,39,68,0.06); }
+    .section-header { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid var(--border); }
+    .section-number { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; background: var(--blue); color: var(--white); border-radius: 50%; font-size: 0.9rem; font-weight: 700; flex-shrink: 0; }
+    .section h2 { font-family: 'Noto Serif JP', serif; font-size: 1.3rem; color: var(--navy); font-weight: 700; margin: 0; padding: 0; border: none; }
+    .section p { color: var(--text); font-size: 0.97rem; margin-bottom: 16px; line-height: 1.9; }
+    .section p:last-child { margin-bottom: 0; }
+
+    .em-text { color: var(--blue); font-weight: 700; }
+
+    /* ポイントボックス */
+    .point-box { background: var(--accent-light); border: 2px solid var(--accent); border-radius: 10px; padding: 20px 24px; margin: 20px 0; display: flex; gap: 14px; align-items: flex-start; }
+    .point-icon { font-size: 1.6rem; flex-shrink: 0; margin-top: 2px; }
+    .point-box p { margin: 0; font-size: 0.95rem; font-weight: 500; color: var(--navy); }
+
+    /* 注意ボックス */
+    .note-box { background: var(--light-blue); border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; padding: 16px 20px; margin: 20px 0; font-size: 0.92rem; color: var(--navy); }
+
+    /* 比較テーブル */
+    .compare-table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 0.9rem; }
+    .compare-table th { background: var(--navy); color: var(--white); padding: 12px 16px; text-align: center; font-weight: 700; }
+    .compare-table td { padding: 12px 16px; border: 1px solid var(--border); text-align: center; vertical-align: middle; }
+    .compare-table tr:nth-child(even) td { background: var(--bg); }
+    .compare-table .td-label { font-weight: 700; color: var(--navy); text-align: left; background: var(--light-blue) !important; }
+
+    /* 作業リスト */
+    .work-list { list-style: none; padding: 0; margin: 16px 0; }
+    .work-list li { padding: 10px 0 10px 36px; border-bottom: 1px solid var(--border); position: relative; font-size: 0.95rem; }
+    .work-list li::before { content: '⚡'; position: absolute; left: 0; top: 10px; }
+    .work-list li:last-child { border-bottom: none; }
+
+    /* チェックリスト */
+    .check-list { list-style: none; padding: 0; }
+    .check-list li { padding: 10px 0 10px 36px; border-bottom: 1px solid var(--border); position: relative; font-size: 0.95rem; }
+    .check-list li::before { content: '✅'; position: absolute; left: 0; top: 10px; }
+    .check-list li:last-child { border-bottom: none; }
+
+    /* 2カラムカード */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+    .info-card { border-radius: 10px; padding: 20px; border-top: 4px solid var(--blue); background: var(--white); box-shadow: 0 2px 8px rgba(26,39,68,0.07); }
+    .info-card.orange { border-top-color: var(--accent); }
+    .info-card .card-icon { font-size: 2rem; margin-bottom: 8px; }
+    .info-card .card-title { font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .info-card ul { padding-left: 18px; font-size: 0.88rem; color: var(--text-light); line-height: 1.8; }
+
+    /* まとめ */
+    .summary { background: linear-gradient(135deg, var(--navy), #2a3f6f); border-radius: 12px; padding: 36px; margin-bottom: 28px; color: var(--white); }
+    .summary .section-header { border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .summary .section-number { background: var(--accent); color: var(--navy); }
+    .summary h2 { font-family: 'Noto Serif JP', serif; font-size: 1.2rem; color: var(--white); font-weight: 700; margin: 0; padding: 0; border: none; }
+    .summary ul { list-style: none; padding: 0; margin-top: 4px; }
+    .summary ul li { padding: 8px 0 8px 28px; position: relative; font-size: 0.95rem; color: #d0dcf0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .summary ul li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
+    .summary ul li:last-child { border-bottom: none; }
+
+    /* CTA */
+    .cta-section { background: var(--white); border-radius: 12px; padding: 36px; margin-bottom: 40px; text-align: center; box-shadow: 0 2px 12px rgba(26,39,68,0.06); border: 2px solid var(--accent); }
+    .cta-section h3 { font-family: 'Noto Serif JP', serif; font-size: 1.2rem; color: var(--navy); margin-bottom: 12px; }
+    .cta-section p { color: var(--text-light); font-size: 0.92rem; margin-bottom: 24px; }
+    .cta-btn { display: inline-block; background: var(--blue); color: var(--white); padding: 14px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: background 0.2s, transform 0.2s; box-shadow: 0 4px 14px rgba(37,99,168,0.35); }
+    .cta-btn:hover { background: var(--navy); transform: translateY(-2px); }
+
+    /* 著者ボックス */
+    .author-box { background: var(--white); border-radius: 12px; padding: 24px 28px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(26,39,68,0.06); display: flex; gap: 20px; align-items: flex-start; }
+    .author-icon { width: 60px; height: 60px; background: var(--light-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; flex-shrink: 0; }
+    .author-info h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .author-info p { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; margin: 0; }
+
+    footer { background: var(--navy); color: #7a8faa; text-align: center; padding: 28px 24px; font-size: 0.82rem; }
+    footer a { color: #a8bcd8; text-decoration: none; }
+
+    @media (max-width: 600px) {
+      .section { padding: 24px 18px; }
+      .summary { padding: 24px 18px; }
+      .cta-section { padding: 28px 18px; }
+      .author-box { flex-direction: column; }
+      .two-col { grid-template-columns: 1fr; }
+      .compare-table { font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">梁井電気設備管理事務所</a>
+  <a href="index.html" class="back-btn">← トップページへ戻る</a>
+</header>
+
+<div class="hero">
+  <div class="category-tag">💡 実務・費用編｜電気知識コラム</div>
+  <h1>月次点検・年次点検って何をするの？</h1>
+  <p class="hero-sub">〜 定期点検の内容と重要性をわかりやすく解説 〜</p>
+</div>
+
+<div class="container">
+
+  <div class="toc">
+    <div class="toc-title">📋 この記事でわかること</div>
+    <ol>
+      <li><a href="#sec1">なぜ定期点検が必要なの？</a></li>
+      <li><a href="#sec2">月次点検でやること</a></li>
+      <li><a href="#sec3">年次点検（停電点検）でやること</a></li>
+      <li><a href="#sec4">点検は誰がやるの？法律上の義務</a></li>
+      <li><a href="#sec5">まとめ</a></li>
+    </ol>
+  </div>
+
+  <!-- セクション1 -->
+  <div class="section" id="sec1">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>なぜ定期点検が必要なの？</h2>
+    </div>
+    <p>工場やビルにキュービクル（高圧受電設備）を設置している事業者には、<span class="em-text">法律（電気事業法）によって定期的な点検が義務づけられています。</span></p>
+    <p>電気設備は目に見えない部分で少しずつ劣化します。絶縁が弱くなったり、接触部分がゆるんだりしていても、普段の稼働中はなかなか気づけません。そのまま放置すると、突然の停電・漏電・最悪の場合は火災につながる恐れがあります。</p>
+
+    <div class="point-box">
+      <div class="point-icon">💡</div>
+      <p><strong>ひとことで言うと——</strong><br>
+      定期点検とは、電気設備の「健康診断」です。大きなトラブルになる前に異常を見つけ、安全を保つために行います。</p>
+    </div>
+
+    <p>定期点検には<span class="em-text">「月次点検」と「年次点検」</span>の2種類があり、それぞれ頻度・内容・目的が異なります。</p>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>種類</th>
+          <th>頻度</th>
+          <th>設備の状態</th>
+          <th>おもな目的</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="td-label">月次点検</td>
+          <td>毎月1回</td>
+          <td>通電したまま（停電なし）</td>
+          <td>異常の早期発見</td>
+        </tr>
+        <tr>
+          <td class="td-label">年次点検</td>
+          <td>年1回</td>
+          <td>停電して実施</td>
+          <td>精密な測定・清掃・整備</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- セクション2 -->
+  <div class="section" id="sec2">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>月次点検でやること</h2>
+    </div>
+    <p>月次点検は、<span class="em-text">電気を通した状態のまま（無停電で）毎月1回</span>行う点検です。事業者の操業を止めずに実施できるのが特徴です。</p>
+    <p>電気管理技術者が現場を訪問し、目視や測定器を使って異常がないかを確認します。おもな作業内容は次のとおりです。</p>
+
+    <ul class="work-list">
+      <li><strong>外観点検</strong>　キュービクルの扉・外観に破損・さびがないか確認。異臭・異音・過熱の有無もチェック</li>
+      <li><strong>計器類の確認</strong>　電圧計・電流計・電力計などの指示値が正常範囲内かを確認</li>
+      <li><strong>警報・表示ランプの確認</strong>　異常を知らせるランプや警報装置が正常に動作しているか確認</li>
+      <li><strong>負荷電流の測定</strong>　各回路に流れる電流を測定し、過負荷になっていないかチェック</li>
+      <li><strong>キュービクル周辺の確認</strong>　設備周辺に可燃物や障害物がないか、施錠が適切かを確認</li>
+    </ul>
+
+    <div class="note-box">
+      📌 月次点検は「目で見て・測って・記録する」点検です。停電は不要なため、工場や店舗の営業時間中でも実施できます。
+    </div>
+  </div>
+
+  <!-- セクション3 -->
+  <div class="section" id="sec3">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>年次点検（停電点検）でやること</h2>
+    </div>
+    <p>年次点検は、<span class="em-text">年に1回、設備を停電させて行う精密な点検</span>です。「停電点検」とも呼ばれます。電気を止めることで、通電中には測れない項目を詳しく調べられます。</p>
+    <p>年次点検の前後には停電が必要なため、工場や店舗は事前に日程を調整する必要があります。一般的に数時間〜半日程度かかります。</p>
+
+    <div class="two-col">
+      <div class="info-card">
+        <div class="card-icon">🔬</div>
+        <div class="card-title">精密測定</div>
+        <ul>
+          <li>絶縁抵抗測定（電気が外に漏れていないか）</li>
+          <li>接地抵抗測定（アースが正しく機能しているか）</li>
+          <li>継電器の動作試験（異常時に自動で遮断するか）</li>
+          <li>遮断器の動作確認</li>
+        </ul>
+      </div>
+      <div class="info-card orange">
+        <div class="card-icon">🧹</div>
+        <div class="card-title">清掃・整備</div>
+        <ul>
+          <li>キュービクル内部のほこり清掃</li>
+          <li>接続部の締め直し（ゆるみ防止）</li>
+          <li>開閉器・ヒューズの状態確認</li>
+          <li>冷却装置・換気口の清掃</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="point-box">
+      <div class="point-icon">⚠️</div>
+      <p><strong>停電のスケジュールは早めに計画を</strong><br>
+      年次点検の停電は、生産ラインや業務に影響します。電気管理技術者と相談しながら、余裕をもって日程を決めましょう。梁井電気設備管理事務所では、お客様の操業スケジュールに合わせて柔軟に対応しています。</p>
+    </div>
+  </div>
+
+  <!-- セクション4 -->
+  <div class="section" id="sec4">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>点検は誰がやるの？法律上の義務</h2>
+    </div>
+    <p>月次点検・年次点検は、<span class="em-text">「電気主任技術者」が実施・監督することが法律で定められています。</span>資格を持たない方が勝手に行うことはできません。</p>
+    <p>電気主任技術者を自社で雇っている場合はその方が担当しますが、<strong>外部委託制度</strong>を利用して電気管理技術者に委託している場合は、委託先の専門家が毎月訪問して点検を行います。</p>
+
+    <ul class="check-list">
+      <li>月次点検は毎月1回、電気管理技術者が現場を訪問して実施</li>
+      <li>年次点検は年1回、停電させて精密測定・清掃・整備を実施</li>
+      <li>点検結果は記録として保存する義務がある</li>
+      <li>異常が見つかった場合は速やかに対処・報告が必要</li>
+    </ul>
+
+    <div class="note-box">
+      📌 「点検をさぼる」と法律違反になるだけでなく、万が一事故が起きたときに責任問題になります。定期的な点検で設備の安全を守りましょう。
+    </div>
+  </div>
+
+  <!-- セクション5 まとめ -->
+  <div class="summary" id="sec5">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>まとめ</h2>
+    </div>
+    <ul>
+      <li>月次点検は毎月1回・無停電で実施する「日常の健康診断」</li>
+      <li>年次点検は年1回・停電させて行う「精密検査」</li>
+      <li>どちらも電気事業法で義務づけられており、電気主任技術者が担当する</li>
+      <li>外部委託を利用すれば、専門家が定期的に訪問して点検を行ってくれる</li>
+      <li>点検を適切に行うことで、突然の停電・漏電・火災リスクを大幅に減らせる</li>
+    </ul>
+  </div>
+
+  <!-- 著者ボックス -->
+  <div class="author-box">
+    <div class="author-icon">👨‍💼</div>
+    <div class="author-info">
+      <h4>梁井電気設備管理事務所　代表 梁井</h4>
+      <p>第二種電気主任技術者・エネルギー管理士。兵庫県姫路市を拠点に、高圧受電設備の保安管理業務を行っています。電気のことで困ったことがあれば、お気軽にご相談ください。</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h3>⚡ 電気管理のことでお困りですか？</h3>
+    <p>キュービクルの点検・管理、外部委託についてのご相談はお気軽にどうぞ。<br>姫路市・加古川市・赤穂市・たつの市など兵庫県全域に対応しています。</p>
+    <a href="index.html#contact" class="cta-btn">無料相談・お問い合わせはこちら</a>
+  </div>
+
+</div><!-- /container -->
+
+<footer>
+  <p>© 2025 梁井電気設備管理事務所 | <a href="index.html">トップページ</a></p>
+</footer>
+
+</body>
+</html>
