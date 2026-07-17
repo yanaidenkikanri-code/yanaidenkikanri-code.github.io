@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「高圧危険」近づいたら本当に危ないの？｜電気知識コラム｜梁井電気設備管理事務所</title>
+  <meta name="description" content="工場やビルにあるキュービクルの「高圧危険」表示。本当に近づくだけで危ないのか？高圧電気の危険性を身近な例でわかりやすく解説します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2744;
+      --blue: #2563a8;
+      --blue-light: #e8f0fb;
+      --accent: #f0a500;
+      --accent-light: #fff8e6;
+      --text: #2c3448;
+      --text-muted: #5a6478;
+      --bg: #f5f7fa;
+      --white: #ffffff;
+      --radius: 12px;
+    }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    a { color: var(--blue); }
+
+    /* ヘッダー */
+    .site-header {
+      background: var(--navy);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header .logo {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: 'Noto Serif JP', serif;
+    }
+    .back-link {
+      color: #a0b4d0;
+      font-size: 0.82rem;
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--white); }
+
+    /* ヒーロー */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a3f6f 100%);
+      color: var(--white);
+      padding: 52px 24px 44px;
+      text-align: center;
+    }
+    .category-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+    .hero .subtitle {
+      font-size: 0.95rem;
+      color: #a0b4d0;
+    }
+
+    /* 目次 */
+    .toc {
+      background: var(--white);
+      border-left: 4px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 22px 28px;
+      margin: 32px auto;
+      max-width: 780px;
+    }
+    .toc-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+    .toc ol {
+      padding-left: 1.4em;
+    }
+    .toc ol li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .toc ol li a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .toc ol li a:hover { color: var(--blue); }
+
+    /* 本文 */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* セクション */
+    .section {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 12px rgba(26,39,68,0.06);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .section-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .section h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+    .section p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.9;
+    }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* テーブル */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 18px 0;
+    }
+    .data-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e5edf5;
+      vertical-align: top;
+    }
+    .data-table tr:nth-child(even) td { background: var(--bg); }
+    .data-table tr:last-child td { border-bottom: none; }
+    .badge-low { background: #e8f5e9; color: #2e7d32; font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: 0.78rem; }
+    .badge-high { background: #fff3e0; color: #e65100; font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: 0.78rem; }
+    .badge-extra { background: #fce4ec; color: #b71c1c; font-weight: 700; padding: 2px 8px; border-radius: 4px; font-size: 0.78rem; }
+
+    /* ポイントボックス（黄色） */
+    .point-box {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 18px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .point-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .point-box p { font-size: 0.9rem; margin: 0; }
+
+    /* 警告ボックス（赤） */
+    .warn-box {
+      background: #fff5f5;
+      border-left: 4px solid #e53e3e;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 18px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .warn-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .warn-box p { font-size: 0.9rem; margin: 0; color: #c53030; }
+
+    /* NGリスト */
+    .ng-list {
+      list-style: none;
+      margin: 14px 0;
+    }
+    .ng-list li {
+      font-size: 0.92rem;
+      padding: 10px 16px;
+      background: #fff5f5;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.6;
+    }
+    .ng-list li::before {
+      content: "✕";
+      color: #e53e3e;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* チェックリスト */
+    .check-list {
+      list-style: none;
+      margin: 14px 0;
+    }
+    .check-list li {
+      font-size: 0.92rem;
+      padding: 10px 16px;
+      background: var(--blue-light);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.6;
+    }
+    .check-list li::before {
+      content: "✔";
+      color: var(--blue);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* まとめ */
+    .summary {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a3f6f 100%);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      margin-bottom: 28px;
+    }
+    .summary .section-header { margin-bottom: 20px; }
+    .summary .section-number {
+      background: var(--accent);
+      color: var(--navy);
+    }
+    .summary h2 { color: var(--white); }
+    .summary ul {
+      list-style: none;
+      margin: 0;
+    }
+    .summary ul li {
+      font-size: 0.93rem;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding-left: 1.4em;
+      position: relative;
+      line-height: 1.7;
+    }
+    .summary ul li:last-child { border-bottom: none; }
+    .summary ul li::before {
+      content: "✔";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-size: 0.85rem;
+    }
+
+    /* 著者ボックス */
+    .author-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      box-shadow: 0 2px 12px rgba(26,39,68,0.06);
+    }
+    .author-icon { font-size: 2.4rem; flex-shrink: 0; }
+    .author-info h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .author-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* CTAセクション */
+    .cta-section {
+      background: linear-gradient(135deg, #1a3a5c, #2563a8);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .cta-section h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      font-size: 0.9rem;
+      color: #c0d4ee;
+      margin-bottom: 22px;
+      line-height: 1.8;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.88; }
+
+    /* フッター */
+    footer {
+      background: var(--navy);
+      color: #8090b0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.82rem;
+    }
+    footer a { color: #8090b0; }
+
+    @media (max-width: 600px) {
+      .section { padding: 24px 18px; }
+      .summary { padding: 24px 18px; }
+      .cta-section { padding: 28px 18px; }
+      .author-box { flex-direction: column; gap: 10px; }
+      .data-table { font-size: 0.78rem; }
+      .data-table th, .data-table td { padding: 8px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">梁井電気設備管理事務所</a>
+  <a href="index.html" class="back-link">← トップページへ戻る</a>
+</header>
+
+<div class="hero">
+  <div class="category-badge">🔰 入門編｜電気知識コラム</div>
+  <h1>「高圧危険」近づいたら<br>本当に危ないの？</h1>
+  <p class="subtitle">〜 高圧電気の危険性を身近な例でわかりやすく解説 〜</p>
+</div>
+
+<div class="content">
+
+  <div class="toc">
+    <div class="toc-title">📋 この記事でわかること</div>
+    <ol>
+      <li><a href="#sec1">「高圧」って何ボルトから？低圧との違い</a></li>
+      <li><a href="#sec2">なぜ「近づくだけ」で危険なの？</a></li>
+      <li><a href="#sec3">キュービクル周辺でやってはいけないこと</a></li>
+      <li><a href="#sec4">法律で定められている安全対策</a></li>
+      <li><a href="#sec5">まとめ</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section" id="sec1">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>「高圧」って何ボルトから？低圧との違い</h2>
+    </div>
+    <p>工場やビルのキュービクル（受電設備）には「高圧危険」という黄色い警告板が貼られています。でも、「どのくらい危ないの？」と聞かれると、具体的にイメージしにくい方も多いのではないでしょうか。</p>
+    <p>まず、電圧の区分を整理しましょう。電気は電圧の高さによって「低圧」「高圧」「特別高圧」の3つに分けられています。</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>区分</th>
+          <th>電圧の範囲（交流）</th>
+          <th>身近な例</th>
+          <th>危険度</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>低圧</strong></td>
+          <td>600V以下</td>
+          <td>家庭のコンセント（100V・200V）</td>
+          <td><span class="badge-low">低〜中</span></td>
+        </tr>
+        <tr>
+          <td><strong>高圧</strong></td>
+          <td>600V超〜7,000V以下</td>
+          <td>工場・ビルのキュービクル（6,600V）</td>
+          <td><span class="badge-high">高</span></td>
+        </tr>
+        <tr>
+          <td><strong>特別高圧</strong></td>
+          <td>7,000V超</td>
+          <td>変電所・大規模工場・鉄道</td>
+          <td><span class="badge-extra">極めて高い</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>一般家庭に届く電気は100Vや200Vの「低圧」です。一方、工場やビルには電力会社から6,600V（高圧）で電気が届き、キュービクルで低圧に変換してから各設備へ送られます。家庭のコンセントと比べると、キュービクルには66倍もの電圧がかかっています。</p>
+
+    <div class="point-box">
+      <div class="point-icon">📌</div>
+      <p>「高圧危険」の表示があるキュービクルには6,600Vの高電圧がかかっています。家庭のコンセント（100V）の66倍の電圧です。</p>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section" id="sec2">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>なぜ「近づくだけ」で危険なの？</h2>
+    </div>
+    <p>「触れなければ大丈夫でしょ？」と思う方もいるかもしれません。しかし、高圧電気にはアーク放電という「触れなくても危険」な理由があります。アーク放電とは空気中を電気が飛び越える現象で、6,600Vの高圧では、設備に触れなくても近づいただけで感電する危険があります。</p>
+
+    <div class="warn-box">
+      <div class="warn-icon">⚠️</div>
+      <p>高圧電気は「触れなくても飛んでくる」ことがあります。「近づいただけ」で感電する危険があるのはこのためです。</p>
+    </div>
+
+    <p>万が一感電した場合、心停止や重篤なやけどにつながる可能性が非常に高く、強烈な光と熱により周囲の設備損傷・火災のリスクもあります。これが「高圧危険」の表示が法律で義務づけられている理由です。</p>
+
+    <div class="point-box">
+      <div class="point-icon">📌</div>
+      <p>高圧電気は「触れなければ安全」ではありません。「高圧危険」の表示がある場所には、むやみに近づかないことが一番の安全対策です。</p>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section" id="sec3">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>キュービクル周辺でやってはいけないこと</h2>
+    </div>
+    <p>「そういえばキュービクルの近くで荷物を置いていた…」という方もいるかもしれません。キュービクル周辺では、以下のような行為が特に危険です。</p>
+
+    <ul class="ng-list">
+      <li>施錠された扉を無断で開ける</li>
+      <li>キュービクルの周囲に段ボール・可燃物・荷物を置く</li>
+      <li>換気口・通気口をふさぐ（過熱・火災の原因になります）</li>
+      <li>子どもや無関係の人を近づけるなど管理を怠る</li>
+      <li>敷地内の電柱や架線に近づく・はしごなどをかける</li>
+    </ul>
+
+    <div class="point-box">
+      <div class="point-icon">📌</div>
+      <p>キュービクルの扉を開けるのは、原則として電気主任技術者（または委託を受けた電気管理技術者）が行います。「ちょっと中を見てみよう」という行為はお控えください。</p>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section" id="sec4">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>法律で定められている安全対策</h2>
+    </div>
+    <p>高圧電気の危険から人を守るため、電気事業法や関連規則では事業者に対してさまざまな安全対策を義務づけています。</p>
+
+    <ul class="check-list">
+      <li><strong>施錠管理の義務</strong>　キュービクルの扉は常時施錠し、適切に管理する</li>
+      <li><strong>危険表示の設置</strong>　「高圧危険」「立入禁止」などの標識を見やすい場所に掲示する</li>
+      <li><strong>保安距離の確保</strong>　設備周囲に定められた距離内に可燃物等を置かない</li>
+      <li><strong>定期点検の実施</strong>　有資格者による月次点検・年次点検を法定の頻度で実施する</li>
+      <li><strong>保安規程の作成・届出</strong>　電気設備の安全管理に関する規程を作成し、産業保安監督部へ届け出る</li>
+    </ul>
+
+    <p>これらの安全対策を実施・管理するのが電気主任技術者の役割です。自社で選任するか、外部委託制度を活用することで、法律上の義務を果たすことができます。</p>
+  </div>
+
+  <!-- Section 5 まとめ -->
+  <div class="summary" id="sec5">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>まとめ</h2>
+    </div>
+    <ul>
+      <li>工場・ビルのキュービクルには6,600V（家庭の66倍）の高電圧がかかっている</li>
+      <li>高圧電気は「アーク放電」により、触れなくても近づくだけで感電する危険がある</li>
+      <li>キュービクルの扉を開けるのは原則として電気主任技術者（または委託先の電気管理技術者）が行う。<br>周囲への可燃物の放置も厳禁</li>
+      <li>施錠管理・危険表示・定期点検などの安全対策が法律で義務づけられている</li>
+      <li>これらの管理を担うのが電気主任技術者（または外部委託先の電気管理技術者）</li>
+    </ul>
+  </div>
+
+  <!-- 著者ボックス -->
+  <div class="author-box">
+    <div class="author-icon">👨‍💼</div>
+    <div class="author-info">
+      <h4>梁井電気設備管理事務所　代表 梁井</h4>
+      <p>第二種電気主任技術者・エネルギー管理士。兵庫県姫路市を拠点に、高圧受電設備の保安管理業務を行っています。電気のことで困ったことがあれば、お気軽にご相談ください。</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h3>⚡ 電気管理のことでお困りですか？</h3>
+    <p>キュービクルの点検・管理、外部委託についてのご相談はお気軽にどうぞ。<br>姫路市・加古川市・赤穂市・たつの市など兵庫県全域に対応しています。</p>
+    <a href="index.html#contact" class="cta-btn">無料相談・お問い合わせはこちら</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 梁井電気設備管理事務所 | <a href="index.html">トップページ</a></p>
+</footer>
+
+</body>
+</html>
