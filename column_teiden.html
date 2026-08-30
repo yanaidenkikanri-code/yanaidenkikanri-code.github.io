@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>停電はなぜ起きる？工場とご家庭の停電の違い｜電気知識コラム｜梁井電気設備管理事務所</title>
+  <meta name="description" content="停電はなぜ起きるのか。工場・ビルの停電と一般家庭の停電の違い、原因の種類、備えのポイントを電気の専門家がわかりやすく解説します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2744;
+      --blue: #2563a8;
+      --blue-light: #e8f0fb;
+      --accent: #f0a500;
+      --accent-light: #fff8e6;
+      --text: #2c3448;
+      --text-muted: #5a6478;
+      --bg: #f5f7fa;
+      --white: #ffffff;
+      --radius: 12px;
+    }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    a { color: var(--blue); }
+
+    /* ヘッダー */
+    .site-header {
+      background: var(--navy);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header .logo {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: 'Noto Serif JP', serif;
+    }
+    .back-link {
+      color: #a0b4d0;
+      font-size: 0.82rem;
+      text-decoration: none;
+    }
+    .back-link:hover { color: var(--white); }
+
+    /* ヒーロー */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a3f6f 100%);
+      color: var(--white);
+      padding: 52px 24px 44px;
+      text-align: center;
+    }
+    .category-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+    .hero .subtitle {
+      font-size: 0.95rem;
+      color: #a0b4d0;
+    }
+
+    /* 目次 */
+    .toc {
+      background: var(--white);
+      border-left: 4px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 22px 28px;
+      margin: 32px auto;
+      max-width: 780px;
+    }
+    .toc-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+    .toc ol {
+      padding-left: 1.4em;
+    }
+    .toc ol li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .toc ol li a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+    .toc ol li a:hover { color: var(--blue); }
+
+    /* 本文 */
+    .content {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* セクション */
+    .section {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 12px rgba(26,39,68,0.06);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .section-number {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: var(--white);
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .section h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.4;
+    }
+    .section p {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 14px;
+      line-height: 1.9;
+    }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* テーブル */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      margin: 18px 0;
+    }
+    .data-table th {
+      background: var(--navy);
+      color: var(--white);
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .data-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e5edf5;
+      vertical-align: top;
+    }
+    .data-table tr:nth-child(even) td { background: var(--bg); }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ポイントボックス（黄色） */
+    .point-box {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 18px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .point-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .point-box p { font-size: 0.9rem; margin: 0; }
+
+    /* 警告ボックス（赤） */
+    .warn-box {
+      background: #fff5f5;
+      border-left: 4px solid #e53e3e;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 18px 0;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .warn-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .warn-box p { font-size: 0.9rem; margin: 0; color: #c53030; }
+
+    /* 2カラムカード */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 18px 0;
+    }
+    .col-card {
+      background: var(--bg);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .col-card h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      color: var(--navy);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .col-card ul {
+      list-style: none;
+      margin: 0;
+    }
+    .col-card ul li {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      padding: 5px 0 5px 1.1em;
+      position: relative;
+      line-height: 1.7;
+    }
+    .col-card ul li::before {
+      content: "・";
+      position: absolute;
+      left: 0;
+      color: var(--blue);
+      font-weight: 700;
+    }
+
+    /* 原因リスト */
+    .cause-list {
+      list-style: none;
+      margin: 14px 0;
+    }
+    .cause-list li {
+      font-size: 0.92rem;
+      padding: 14px 18px;
+      background: var(--bg);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+    .cause-list li strong {
+      display: block;
+      color: var(--navy);
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+    }
+
+    /* チェックリスト */
+    .check-list {
+      list-style: none;
+      margin: 14px 0;
+    }
+    .check-list li {
+      font-size: 0.92rem;
+      padding: 14px 18px;
+      background: var(--blue-light);
+      border-radius: 8px;
+      margin-bottom: 8px;
+      display: grid;
+      grid-template-columns: 1.3em 1fr;
+      column-gap: 6px;
+      line-height: 1.75;
+    }
+    .check-list li::before {
+      content: "✔";
+      color: var(--blue);
+      font-weight: 700;
+      grid-column: 1;
+      grid-row: 1 / span 2;
+      line-height: 1.75;
+    }
+    .check-list li strong {
+      grid-column: 2;
+      color: var(--navy);
+      display: block;
+      margin-bottom: 2px;
+    }
+    .check-list li span {
+      grid-column: 2;
+      color: var(--text-muted);
+      display: block;
+    }
+
+    /* まとめ */
+    .summary {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a3f6f 100%);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      margin-bottom: 28px;
+    }
+    .summary .section-header { margin-bottom: 20px; }
+    .summary .section-number {
+      background: var(--accent);
+      color: var(--navy);
+    }
+    .summary h2 { color: var(--white); }
+    .summary ul {
+      list-style: none;
+      margin: 0;
+    }
+    .summary ul li {
+      font-size: 0.93rem;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding-left: 1.4em;
+      position: relative;
+      line-height: 1.7;
+    }
+    .summary ul li:last-child { border-bottom: none; }
+    .summary ul li::before {
+      content: "✔";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-size: 0.85rem;
+    }
+
+    /* 著者ボックス */
+    .author-box {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 28px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      box-shadow: 0 2px 12px rgba(26,39,68,0.06);
+    }
+    .author-icon { font-size: 2.4rem; flex-shrink: 0; }
+    .author-info h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }
+    .author-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    /* CTAセクション */
+    .cta-section {
+      background: linear-gradient(135deg, #1a3a5c, #2563a8);
+      color: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      text-align: center;
+      margin-bottom: 28px;
+    }
+    .cta-section h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .cta-section p {
+      font-size: 0.9rem;
+      color: #c0d4ee;
+      margin-bottom: 22px;
+      line-height: 1.8;
+    }
+    .cta-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 13px 32px;
+      border-radius: 30px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.88; }
+
+    /* フッター */
+    footer {
+      background: var(--navy);
+      color: #8090b0;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.82rem;
+    }
+    footer a { color: #8090b0; }
+
+    @media (max-width: 600px) {
+      .section { padding: 24px 18px; }
+      .summary { padding: 24px 18px; }
+      .cta-section { padding: 28px 18px; }
+      .author-box { flex-direction: column; gap: 10px; }
+      .two-col { grid-template-columns: 1fr; }
+      .data-table { font-size: 0.78rem; }
+      .data-table th, .data-table td { padding: 8px 8px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">梁井電気設備管理事務所</a>
+  <a href="index.html" class="back-link">← トップページへ戻る</a>
+</header>
+
+<div class="hero">
+  <div class="category-badge">🔰 入門編｜電気知識コラム</div>
+  <h1>停電はなぜ起きる？<br>工場とご家庭の停電の違い</h1>
+  <p class="subtitle">〜 停電の種類と原因をわかりやすく解説 〜</p>
+</div>
+
+<div class="content">
+
+  <div class="toc">
+    <div class="toc-title">📋 この記事でわかること</div>
+    <ol>
+      <li><a href="#sec1">停電には2つの種類がある</a></li>
+      <li><a href="#sec2">工場・ビルの停電と家庭の停電の違い</a></li>
+      <li><a href="#sec3">突然の停電、おもな原因は？</a></li>
+      <li><a href="#sec4">停電に備えてできること</a></li>
+      <li><a href="#sec5">まとめ</a></li>
+    </ol>
+  </div>
+
+  <!-- Section 1 -->
+  <div class="section" id="sec1">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>停電には2つの種類がある</h2>
+    </div>
+    <p>「停電」と一口に言っても、実は大きく2つの種類に分けられます。<strong>予定された停電</strong>と、<strong>突然起きる停電</strong>です。</p>
+    <p>予定停電は、あらかじめ日時を決めて計画的に電気を止めるものです。工場やビルでは、年次点検（停電点検）のときに実施します。電力会社側の工事で停電になる場合も、事前に案内が届きます。</p>
+    <p>一方、突発停電は文字どおり予告なく起こります。台風や落雷などの自然災害、設備の故障、動物の侵入などが原因です。事業所にとっては、生産ラインの停止やデータ損失につながる可能性があるため、備えが重要になります。</p>
+
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>種類</th>
+          <th>おもな原因</th>
+          <th>事前の連絡</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>予定停電</strong></td>
+          <td>年次点検（停電点検）、電力会社の設備工事</td>
+          <td>あり（日程調整可）</td>
+        </tr>
+        <tr>
+          <td><strong>突発停電</strong></td>
+          <td>落雷・台風・設備故障・動物の侵入など</td>
+          <td>なし</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="point-box">
+      <div class="point-icon">📌</div>
+      <p>予定停電は「設備を守るための必要な停電」です。年に1回の年次点検で、突発停電のリスクを減らすことができます。</p>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section" id="sec2">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>工場・ビルの停電と家庭の停電の違い</h2>
+    </div>
+    <p>ご家庭で停電が起きたとき、多くは「電力会社側のトラブル」か「ブレーカーが落ちた」のどちらかです。復旧も比較的かんたんで、ブレーカーを上げれば元に戻ることがほとんどです。</p>
+    <p>ところが、高圧受電をしている工場・ビルの場合は事情が異なります。敷地内にキュービクル（受電設備）があり、その設備の管理責任は事業者側にあります。つまり、キュービクル内部で不具合が起きた場合、電力会社は復旧してくれません。</p>
+
+    <div class="two-col">
+      <div class="col-card">
+        <h3>🏠 一般家庭</h3>
+        <ul>
+          <li>電力会社が低圧（100V・200V）で供給</li>
+          <li>設備の管理責任は電力会社側</li>
+          <li>ブレーカーを上げれば復旧することが多い</li>
+          <li>専門知識がなくても対処できる場合がある</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>🏭 工場・ビル</h3>
+        <ul>
+          <li>高圧（6,600V）で受電しキュービクルで変換</li>
+          <li>キュービクル以降の管理責任は事業者側</li>
+          <li>復旧には有資格者の対応が必要</li>
+          <li>原因の切り分け・点検に時間がかかる</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="warn-box">
+      <div class="warn-icon">⚠️</div>
+      <p>キュービクル内での停電は、資格を持たない方が触れると大変危険です。まずは電気管理技術者へご連絡ください。</p>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section" id="sec3">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>突然の停電、おもな原因は？</h2>
+    </div>
+    <p>予告なく起こる停電には、いくつかの典型的な原因があります。代表的なものを見てみましょう。</p>
+
+    <ul class="cause-list">
+      <li>
+        <strong>⚡ 落雷</strong>
+        雷が電線や設備に落ちると、瞬間的に大きな電圧がかかり、保護装置が働いて電気が遮断されます。直撃でなくても、近くへの落雷で影響を受けることがあります。
+      </li>
+      <li>
+        <strong>🌀 台風・強風・大雪</strong>
+        飛来物が電線に接触したり、倒木で電線が切れたりして停電します。広範囲かつ長時間になることもあります。
+      </li>
+      <li>
+        <strong>🔧 設備の劣化・故障</strong>
+        変圧器や遮断器などの経年劣化、絶縁不良による漏電が原因で起こります。定期点検で早期発見できるケースが多い原因です。
+      </li>
+      <li>
+        <strong>🐁 小動物の侵入</strong>
+        ネズミ・ヘビ・鳥などがキュービクル内に入り込み、充電部に接触して短絡（ショート）を起こします。意外と多い原因のひとつです。
+      </li>
+      <li>
+        <strong>🔌 過負荷</strong>
+        設備を増設したことで容量を超え、保護装置が作動して電気が止まることがあります。
+      </li>
+    </ul>
+
+    <div class="point-box">
+      <div class="point-icon">📌</div>
+      <p>「設備の劣化」「小動物の侵入」による停電は、日ごろの点検で防げるものがほとんどです。定期点検はトラブルの予防になります。</p>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section" id="sec4">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>停電に備えてできること</h2>
+    </div>
+    <p>停電をゼロにすることはできませんが、リスクを減らし、被害を最小限に抑えることは可能です。事業所として取り組んでいただきたいポイントをまとめました。</p>
+
+    <ul class="check-list">
+      <li><strong>定期点検を確実に受ける</strong><span>月次点検・年次点検で劣化や異常を早期に発見する</span></li>
+      <li><strong>キュービクル周辺を清潔に保つ</strong><span>小動物の侵入経路をふさぎ、可燃物を置かない</span></li>
+      <li><strong>緊急連絡体制を整えておく</strong><span>停電時にすぐ連絡できる電気管理技術者の連絡先を共有しておく</span></li>
+      <li><strong>重要設備には非常用電源を検討</strong><span>パソコン、サーバなどはUPS（無停電電源装置）の導入も有効</span></li>
+      <li><strong>年次点検の日程を早めに調整する</strong><span>生産計画に合わせて余裕をもって計画する</span></li>
+    </ul>
+
+    <p>特に重要なのが、<strong>トラブル時にすぐ連絡が取れる体制</strong>です。停電が起きたとき、原因の切り分けと復旧作業には専門知識が欠かせません。日ごろから設備を見ている電気管理技術者であれば、迅速な対応が可能です。</p>
+  </div>
+
+  <!-- Section 5 まとめ -->
+  <div class="summary" id="sec5">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>まとめ</h2>
+    </div>
+    <ul>
+      <li>停電には「予定停電（年次点検など）」と「突発停電」の2種類がある</li>
+      <li>家庭の停電と違い、工場・ビルではキュービクル以降の管理責任は事業者側にある</li>
+      <li>突発停電の原因は落雷・台風・設備劣化・小動物の侵入・過負荷など</li>
+      <li>設備劣化や小動物による停電は、定期点検で予防できるものが多い</li>
+      <li>停電時にすぐ連絡が取れる電気管理技術者との体制づくりが重要</li>
+    </ul>
+  </div>
+
+  <!-- 著者ボックス -->
+  <div class="author-box">
+    <div class="author-icon">👨‍💼</div>
+    <div class="author-info">
+      <h4>梁井電気設備管理事務所　代表 梁井</h4>
+      <p>第二種電気主任技術者・エネルギー管理士。兵庫県姫路市を拠点に、高圧受電設備の保安管理業務を行っています。電気のことで困ったことがあれば、お気軽にご相談ください。</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <h3>⚡ 電気管理のことでお困りですか？</h3>
+    <p>キュービクルの点検・管理、外部委託についてのご相談はお気軽にどうぞ。<br>姫路市・加古川市・赤穂市・たつの市など兵庫県全域に対応しています。</p>
+    <a href="index.html#contact" class="cta-btn">無料相談・お問い合わせはこちら</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2025 梁井電気設備管理事務所 | <a href="index.html">トップページ</a></p>
+</footer>
+
+</body>
+</html>

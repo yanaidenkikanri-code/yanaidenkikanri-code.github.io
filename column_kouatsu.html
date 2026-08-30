@@ -131,7 +131,9 @@
 
     /* まとめ */
     .summary { background: linear-gradient(135deg, var(--navy), #2a3f6f); border-radius: 12px; padding: 36px; margin-bottom: 28px; color: var(--white); }
-    .summary h2 { font-family: 'Noto Serif JP', serif; font-size: 1.2rem; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .summary .section-header { margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+    .summary .section-number { background: var(--accent); color: var(--navy); }
+    .summary h2 { font-family: 'Noto Serif JP', serif; font-size: 1.3rem; font-weight: 700; color: var(--white); margin: 0; padding: 0; border: none; }
     .summary ul { list-style: none; padding: 0; }
     .summary ul li { padding: 8px 0 8px 28px; position: relative; font-size: 0.95rem; color: #d0dcf0; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .summary ul li::before { content: '✓'; position: absolute; left: 0; color: var(--accent); font-weight: 700; }
@@ -412,7 +414,10 @@
 
   <!-- まとめ -->
   <div class="summary" id="sec6">
-    <h2>📝 まとめ</h2>
+    <div class="section-header">
+      <div class="section-number">6</div>
+      <h2>まとめ</h2>
+    </div>
     <ul>
       <li>工場・ビルにある鉄の箱は「キュービクル（高圧受電設備）」</li>
       <li>6,600Vの高圧電気を100V・200Vに変換する「建物専用の変電所」</li>
