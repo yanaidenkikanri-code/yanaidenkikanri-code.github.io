@@ -2,37 +2,43 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yanaidenkikanri-code.github.io/</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://yanaidenkikanri-code.github.io/column_1_kouatsu.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanaidenkikanri-code.github.io/column_2_gaibuitaku.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanaidenkikanri-code.github.io/column_3_tenken.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanaidenkikanri-code.github.io/column_4_kiken.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://yanaidenkikanri-code.github.io/column_5_teiden.html</loc>
-    <lastmod>2026-08-30</lastmod>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://yanaidenkikanri-code.github.io/column_6_hiyou.html</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
