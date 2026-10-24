@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>電気管理の費用、何で決まるの？｜電気知識コラム｜梁井電気設備管理事務所</title>
+  <meta name="description" content="電気設備の保安管理費用は何で決まるのか。設備容量（変圧器容量）・設備構成・点検頻度など料金を左右する要素と、見積もりを比べるときのチェックポイントをわかりやすく解説します。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2744;
+      --blue: #2563a8;
+      --blue-light: #e8f0fb;
+      --accent: #f0a500;
+      --accent-light: #fff8e6;
+      --text: #2c3448;
+      --text-muted: #5a6478;
+      --bg: #f5f7fa;
+      --white: #ffffff;
+      --radius: 12px;
+    }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    a { color: var(--blue); }
+
+    .site-header {
+      background: var(--navy);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .site-header .logo {
+      color: var(--white);
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      font-family: 'Noto Serif JP', serif;
+    }
+    .back-link { color: #a0b4d0; font-size: 0.82rem; text-decoration: none; }
+    .back-link:hover { color: var(--white); }
+
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a3f6f 100%);
+      color: var(--white);
+      padding: 52px 24px 44px;
+      text-align: center;
+    }
+    .category-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--navy);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 14px;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-weight: 700;
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+    .hero .subtitle { font-size: 0.95rem; color: #a0b4d0; }
+
+    .toc {
+      background: var(--white);
+      border-left: 4px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 22px 28px;
+      margin: 32px auto;
+      max-width: 780px;
+    }
+    .toc-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue);
+      margin-bottom: 10px;
+      letter-spacing: 0.05em;
+    }
+    .toc ol { padding-left: 1.4em; }
+    .toc ol li { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 4px; }
+    .toc ol li a { color: var(--text-muted); text-decoration: none; }
+    .toc ol li a:hover { color: var(--blue); }
+
+    .content { max-width: 780px; margin: 0 auto; padding: 0 20px 60px; }
+
+    .section {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 36px 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 12px rgba(26,39,68,0.06);
+    }
+    .section-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
+    .section-number {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--blue); color: var(--white);
+      font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .section h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem; font-weight: 700; color: var(--navy); line-height: 1.4;
+    }
+    .section p { font-size: 0.95rem; color: var(--text); margin-bottom: 14px; line-height: 1.9; }
+    .section p:last-child { margin-bottom: 0; }
+
+    .point-box {
+      background: var(--accent-light);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--radius);
+      padding: 16px 20px; margin: 18px 0;
+      display: flex; gap: 12px; align-items: flex-start;
+    }
+    .point-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .point-box p { font-size: 0.9rem; margin: 0; }
+
+    .factor-list { list-style: none; margin: 16px 0; }
+    .factor-list li {
+      display: grid; grid-template-columns: 2.4em 1fr; column-gap: 10px;
+      padding: 16px 18px; background: var(--bg); border-radius: 10px;
+      margin-bottom: 10px; line-height: 1.8;
+    }
+    .factor-num {
+      grid-column: 1; grid-row: 1 / span 2;
+      width: 30px; height: 30px; border-radius: 50%;
+      background: var(--blue); color: var(--white);
+      font-size: 0.85rem; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .factor-list li strong { grid-column: 2; display: block; color: var(--navy); font-size: 0.95rem; margin-bottom: 2px; }
+    .factor-list li span { grid-column: 2; display: block; font-size: 0.9rem; color: var(--text-muted); }
+
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 18px 0; }
+    .col-card { background: var(--bg); border-radius: var(--radius); padding: 20px; }
+    .col-card h3 {
+      font-family: 'Noto Serif JP', serif; font-size: 1rem; color: var(--navy);
+      margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+    }
+    .col-card ul { list-style: none; margin: 0; }
+    .col-card ul li {
+      font-size: 0.88rem; color: var(--text-muted);
+      padding: 5px 0 5px 1.1em; position: relative; line-height: 1.7;
+    }
+    .col-card ul li::before { content: "・"; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
+
+    .check-list { list-style: none; margin: 14px 0; }
+    .check-list li {
+      font-size: 0.92rem; padding: 14px 18px;
+      background: var(--blue-light); border-radius: 8px; margin-bottom: 8px;
+      display: grid; grid-template-columns: 1.3em 1fr; column-gap: 6px; line-height: 1.75;
+    }
+    .check-list li::before {
+      content: "✔"; color: var(--blue); font-weight: 700;
+      grid-column: 1; grid-row: 1 / span 2; line-height: 1.75;
+    }
+    .check-list li strong { grid-column: 2; color: var(--navy); display: block; margin-bottom: 2px; }
+    .check-list li span { grid-column: 2; color: var(--text-muted); display: block; }
+
+    .summary {
+      background: linear-gradient(135deg, var(--navy) 0%, #2a3f6f 100%);
+      color: var(--white); border-radius: var(--radius);
+      padding: 36px 32px; margin-bottom: 28px;
+    }
+    .summary .section-header { margin-bottom: 20px; }
+    .summary .section-number { background: var(--accent); color: var(--navy); }
+    .summary h2 { color: var(--white); }
+    .summary ul { list-style: none; margin: 0; }
+    .summary ul li {
+      font-size: 0.93rem; padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      padding-left: 1.4em; position: relative; line-height: 1.7;
+    }
+    .summary ul li:last-child { border-bottom: none; }
+    .summary ul li::before { content: "✔"; color: var(--accent); position: absolute; left: 0; font-size: 0.85rem; }
+
+    .related-box { background:#ffffff; border-radius:12px; padding:26px 28px; margin-bottom:28px; box-shadow:0 2px 12px rgba(26,39,68,0.06); }
+    .related-head { font-family:'Noto Serif JP',serif; font-size:1rem; color:#1a2744; margin-bottom:16px; }
+    .related-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+    .related-list a { display:block; background:#f5f7fa; border-radius:10px; padding:14px 16px; text-decoration:none; transition:background .2s,transform .2s; }
+    .related-list a:hover { background:#e8f0fb; transform:translateY(-2px); }
+    .rel-cat { display:block; font-size:.72rem; font-weight:700; color:#b97f1e; margin-bottom:6px; }
+    .rel-title { display:block; font-size:.9rem; font-weight:700; color:#1a2744; line-height:1.6; }
+    .related-all { margin:16px 0 0; font-size:.85rem; }
+    .related-all a { color:#2563a8; font-weight:700; text-decoration:none; }
+    .related-all a:hover { text-decoration:underline; }
+
+    .author-box {
+      background: var(--white); border-radius: var(--radius);
+      padding: 24px 28px; margin-bottom: 28px;
+      display: flex; gap: 18px; align-items: flex-start;
+      box-shadow: 0 2px 12px rgba(26,39,68,0.06);
+    }
+    .author-icon { font-size: 2.4rem; flex-shrink: 0; }
+    .author-info h4 { font-size: 0.92rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .author-info p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.75; margin: 0; }
+
+    .cta-section {
+      background: linear-gradient(135deg, #1a3a5c, #2563a8);
+      color: var(--white); border-radius: var(--radius);
+      padding: 36px 32px; text-align: center; margin-bottom: 28px;
+    }
+    .cta-section h3 { font-family: 'Noto Serif JP', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 12px; }
+    .cta-section p { font-size: 0.9rem; color: #c0d4ee; margin-bottom: 22px; line-height: 1.8; }
+    .cta-btn {
+      display: inline-block; background: var(--accent); color: var(--navy);
+      font-weight: 700; font-size: 0.95rem; padding: 13px 32px;
+      border-radius: 30px; text-decoration: none; transition: opacity 0.2s;
+    }
+    .cta-btn:hover { opacity: 0.88; }
+
+    footer { background: var(--navy); color: #8090b0; text-align: center; padding: 20px; font-size: 0.82rem; }
+    footer a { color: #8090b0; }
+
+    @media (max-width: 600px) {
+      .section { padding: 24px 18px; }
+      .summary { padding: 24px 18px; }
+      .cta-section { padding: 28px 18px; }
+      .author-box { flex-direction: column; gap: 10px; }
+      .two-col { grid-template-columns: 1fr; }
+    }
+  </style>
+  <link rel="canonical" href="https://yanaidenkikanri-code.github.io/column_6_hiyou.html">
+  <meta name="author" content="梁井電気設備管理事務所　代表 梁井 伸介">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="電気管理の費用、何で決まるの？｜電気知識コラム｜梁井電気設備管理事務所">
+  <meta property="og:description" content="電気設備の保安管理費用は何で決まるのか。設備容量（変圧器容量）・設備構成・点検頻度など料金を左右する要素と、見積もりを比べるときのチェックポイントをわかりやすく解説します。">
+  <meta property="og:url" content="https://yanaidenkikanri-code.github.io/column_6_hiyou.html">
+  <meta property="og:site_name" content="梁井電気設備管理事務所">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="電気管理の費用、何で決まるの？｜電気知識コラム｜梁井電気設備管理事務所">
+  <meta name="twitter:description" content="電気設備の保安管理費用は何で決まるのか。設備容量（変圧器容量）・設備構成・点検頻度など料金を左右する要素と、見積もりを比べるときのチェックポイントをわかりやすく解説します。">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "電気管理の費用、何で決まるの？",
+  "description": "電気設備の保安管理費用は何で決まるのか。設備容量（変圧器容量）・設備構成・点検頻度など料金を左右する要素と、見積もりを比べるときのチェックポイントをわかりやすく解説します。",
+  "inLanguage": "ja",
+  "datePublished": "2026-10-24",
+  "dateModified": "2026-10-24",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://yanaidenkikanri-code.github.io/column_6_hiyou.html"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "梁井 伸介",
+    "jobTitle": "第二種電気主任技術者・エネルギー管理士",
+    "worksFor": { "@type": "Organization", "name": "梁井電気設備管理事務所" }
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "梁井電気設備管理事務所",
+    "url": "https://yanaidenkikanri-code.github.io/"
+  },
+  "about": ["電気保安管理費用", "設備容量", "変圧器", "電気主任技術者", "キュービクル"]
+}
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://yanaidenkikanri-code.github.io/" },
+    { "@type": "ListItem", "position": 2, "name": "電気知識コラム", "item": "https://yanaidenkikanri-code.github.io/#column" },
+    { "@type": "ListItem", "position": 3, "name": "電気管理の費用、何で決まるの？", "item": "https://yanaidenkikanri-code.github.io/column_6_hiyou.html" }
+  ]
+}
+  </script>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="index.html" class="logo">梁井電気設備管理事務所</a>
+  <a href="index.html" class="back-link">← トップページへ戻る</a>
+</header>
+
+<div class="hero">
+  <div class="category-badge">💡 実務・費用編｜電気知識コラム</div>
+  <h1>電気管理の費用、<br>何で決まるの？</h1>
+  <p class="subtitle">〜 設備容量・設備構成による料金の違いを解説 〜</p>
+</div>
+
+<div class="content">
+
+  <div class="toc">
+    <div class="toc-title">📋 この記事でわかること</div>
+    <ol>
+      <li><a href="#sec1">料金は「設備の規模」が基準になる</a></li>
+      <li><a href="#sec2">費用を左右する5つの要素</a></li>
+      <li><a href="#sec3">月次契約に含まれるもの・別料金になるもの</a></li>
+      <li><a href="#sec4">見積もりを比べるときのチェックポイント</a></li>
+      <li><a href="#sec5">まとめ</a></li>
+    </ol>
+  </div>
+
+  <div class="section" id="sec1">
+    <div class="section-header">
+      <div class="section-number">1</div>
+      <h2>料金は「設備の規模」が基準になる</h2>
+    </div>
+    <p>「電気の保安管理をお願いしたいが、いくらぐらいかかるのか見当がつかない」というご相談をよくいただきます。ホームページに金額が書かれていないことも多く、不安に感じる方もいらっしゃると思います。</p>
+    <p>金額が明記されていないのには理由があります。電気設備は事業所ごとに規模も構成もまったく異なり、点検にかかる手間や時間が変わるためです。同じ「キュービクル1台」でも、変圧器の数や設置場所によって作業量は大きく違います。</p>
+    <p>とはいえ、料金の決まり方には共通した考え方があります。もっとも基本になるのが<strong>設備容量</strong>です。これは受変電設備に設置されている<strong>変圧器の容量（kVA）の合計</strong>を基準とした考え方で、容量が大きいほど設備の規模も大きくなり、点検箇所が増え、管理する責任の範囲も広くなります。</p>
+
+    <div class="point-box">
+      <div class="point-icon">📌</div>
+      <p>料金のベースは「変圧器容量を基準とした設備容量」です。キュービクルの単線結線図や設備一覧をご用意いただければ、おおよその目安をお伝えできます。</p>
+    </div>
+  </div>
+
+  <div class="section" id="sec2">
+    <div class="section-header">
+      <div class="section-number">2</div>
+      <h2>費用を左右する5つの要素</h2>
+    </div>
+    <p>設備容量を基準としながら、実際には次の要素を合わせて見積もりを算出します。</p>
+
+    <ul class="factor-list">
+      <li>
+        <div class="factor-num">1</div>
+        <strong>設備容量（変圧器容量の合計）</strong>
+        <span>もっとも大きな基準になります。小規模な施設と大規模な工場とでは、点検対象となる機器の数も作業量も大きく異なります。</span>
+      </li>
+      <li>
+        <div class="factor-num">2</div>
+        <strong>設備の種類・台数</strong>
+        <span>変圧器やキュービクルの台数、高圧機器の構成によって点検箇所が増減します。予備電源や太陽光発電設備がある場合も加算要素になります。</span>
+      </li>
+      <li>
+        <div class="factor-num">3</div>
+        <strong>点検の頻度</strong>
+        <span>月次点検は毎月1回が基本ですが、設備の状態や管理体制によって頻度が変わる場合があり、費用にも反映されます。</span>
+      </li>
+      <li>
+        <div class="factor-num">4</div>
+        <strong>設置場所・移動距離</strong>
+        <span>事業所の所在地によって移動時間が変わるため、距離が離れるほど費用に反映されます。</span>
+      </li>
+      <li>
+        <div class="factor-num">5</div>
+        <strong>付帯する業務の範囲</strong>
+        <span>保安規程の作成・届出の代行、年次点検の立会い、緊急時の駆けつけ対応など、どこまで含めるかによって変わります。</span>
+      </li>
+    </ul>
+
+    <p>このうち<strong>設備容量</strong>と<strong>設備の構成</strong>でおおよその金額が決まり、そこへ残りの条件が加味される、という考え方が基本になります。</p>
+  </div>
+
+  <div class="section" id="sec3">
+    <div class="section-header">
+      <div class="section-number">3</div>
+      <h2>月次契約に含まれるもの・別料金になるもの</h2>
+    </div>
+    <p>保安管理は通常、月額の契約を結んだうえで業務を行います。ここで注意していただきたいのが、<strong>月額料金にどこまで含まれているか</strong>です。事業者によって範囲が異なるため、比較するときの重要なポイントになります。</p>
+
+    <div class="two-col">
+      <div class="col-card">
+        <h3>✅ 月額に含まれることが多い業務</h3>
+        <ul>
+          <li>月次点検（毎月の訪問・測定・記録）</li>
+          <li>点検報告書の作成・提出</li>
+          <li>保安規程にもとづく管理業務</li>
+          <li>電気のトラブル時の相談対応</li>
+          <li>法令改正などの情報提供</li>
+        </ul>
+      </div>
+      <div class="col-card">
+        <h3>💰 別料金となる場合がある業務</h3>
+        <ul>
+          <li>年次点検（停電点検）の実施費用</li>
+          <li>設備の修繕・更新工事</li>
+          <li>不具合が見つかった際の精密調査</li>
+          <li>時間外・休日の緊急出動</li>
+          <li>各種届出書類の作成代行</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>特に年次点検は、停電を伴う大がかりな作業のため、月額とは別に費用が発生することもあります。契約内容によって扱いが異なるため、年間の総額で考えるときは、<strong>月額 × 12か月 ＋ 年次点検費用</strong>がどうなるかを確認しておくと見通しが立てやすくなります。</p>
+
+    <div class="point-box">
+      <div class="point-icon">📌</div>
+      <p>月額だけを比べると安く見えても、年次点検が別料金となっている場合があります。必ず「年間の総額」で比較してください。</p>
+    </div>
+  </div>
+
+  <div class="section" id="sec4">
+    <div class="section-header">
+      <div class="section-number">4</div>
+      <h2>見積もりを比べるときのチェックポイント</h2>
+    </div>
+    <p>複数の事業者から見積もりを取る場合、金額だけでは判断できません。次の点を確認しておくと、後からの行き違いを防げます。</p>
+
+    <ul class="check-list">
+      <li><strong>年次点検が含まれているか</strong><span>含まれていない場合、年次点検の概算もあわせて確認しておく</span></li>
+      <li><strong>緊急時の対応条件</strong><span>何時まで対応してもらえるか、駆けつけに別途費用がかかるか、到着までの目安時間</span></li>
+      <li><strong>点検報告書の内容</strong><span>測定値や所見が記載されるか、改善提案まで書いてもらえるか</span></li>
+      <li><strong>担当者が固定されるか</strong><span>毎回同じ技術者が来るほうが、設備の経過を把握してもらえます</span></li>
+      <li><strong>契約期間と解約条件</strong><span>最低契約期間の有無、解約時の申し出時期</span></li>
+    </ul>
+
+    <p>保安管理は長いおつきあいになる業務です。金額の安さだけでなく、<strong>質問のしやすさや報告のわかりやすさ</strong>も含めて判断されることをおすすめします。</p>
+  </div>
+
+  <div class="summary" id="sec5">
+    <div class="section-header">
+      <div class="section-number">5</div>
+      <h2>まとめ</h2>
+    </div>
+    <ul>
+      <li>保安管理の費用は「変圧器容量を基準とした設備容量」がもっとも基本的な基準になる</li>
+      <li>設備の台数・点検頻度・移動距離・業務範囲によって金額が変動する</li>
+      <li>年次点検（停電点検）は月額とは別料金となることもあるため、契約内容の確認が必要</li>
+      <li>比較するときは月額ではなく「年間の総額」で見ることが大切</li>
+      <li>対応範囲・報告内容・担当者の体制もあわせて確認しておくと安心</li>
+    </ul>
+  </div>
+
+  <div class="related-box">
+    <h3 class="related-head">🔗 あわせて読みたい</h3>
+    <div class="related-list">
+      <a href="column_2_gaibuitaku.html">
+        <span class="rel-cat">💡 実務・費用編</span>
+        <span class="rel-title">電気主任技術者を雇わなくていい？</span>
+      </a>
+      <a href="column_3_tenken.html">
+        <span class="rel-cat">💡 実務・費用編</span>
+        <span class="rel-title">月次点検・年次点検の内容</span>
+      </a>
+      <a href="column_1_kouatsu.html">
+        <span class="rel-cat">🔰 入門編</span>
+        <span class="rel-title">キュービクルとは？鉄の箱の正体</span>
+      </a>
+    </div>
+    <p class="related-all"><a href="index.html#column">コラム一覧をすべて見る →</a></p>
+  </div>
+
+  <div class="author-box">
+    <div class="author-icon">👨‍💼</div>
+    <div class="author-info">
+      <h4>梁井電気設備管理事務所　代表 梁井</h4>
+      <p>第二種電気主任技術者・エネルギー管理士。兵庫県姫路市を拠点に、高圧受電設備の保安管理業務を行っています。電気のことで困ったことがあれば、お気軽にご相談ください。</p>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h3>⚡ 費用の目安をお知りになりたい方へ</h3>
+    <p>キュービクルの単線結線図や設備一覧をご用意いただければ、おおよその費用をお伝えできます。<br>現地調査・お見積りは無料です。姫路市・加古川市・赤穂市・たつの市など兵庫県全域に対応しています。</p>
+    <a href="index.html#contact" class="cta-btn">無料でお見積りを依頼する</a>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2026 梁井電気設備管理事務所 | <a href="index.html">トップページ</a></p>
+</footer>
+
+</body>
+</html>
